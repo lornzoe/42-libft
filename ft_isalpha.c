@@ -6,11 +6,11 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:13:34 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/05 19:24:46 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/05 19:50:45 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {

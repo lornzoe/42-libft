@@ -6,11 +6,11 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:23:27 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/05 19:31:55 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/05 19:51:04 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
 int ft_isalnum(int c)
 {
