@@ -6,7 +6,7 @@
 #    By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 14:22:04 by lyanga            #+#    #+#              #
-#    Updated: 2025/04/04 12:08:14 by lyanga           ###   ########.fr        #
+#    Updated: 2025/05/05 17:44:52 by lyanga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ endef
 # **************************************************************************** #
 # rules
 
-all:	p_bar $(NAME) p_bar_close
+all:	p_bar $(NAME) p_bar_close p_libft_logo
 	@printf "\n$(B)$(MAG)$(NAME) is finished compiling$(D)\n"
 
 p_bar:
@@ -75,6 +75,17 @@ p_bar_bonus:
 
 p_bar_close:
 	@printf "\n\n"
+
+p_libft_logo:
+	@printf "$(YEL)\n"
+	@printf "        :::     ::::::::              :::       ::::::::::::::::::::       ::::::::::::::::::::: "
+	@printf "      :+:     :+:    :+:             :+:           :+:    :+:    :+:      :+:           :+:      "
+	@printf "    +:+ +:+        +:+              +:+           +:+    +:+    +:+      +:+           +:+       "
+	@printf "  +#+  +:+      +#+   +#++:++#++:+++#+           +#+    +#++:++#+       :#::+::#      +#+        "
+	@printf "+#+#+#+#+#+  +#+                  +#+           +#+    +#+    +#+      +#+           +#+         "
+	@printf "     #+#   #+#                   #+#           #+#    #+#    #+#      #+#           #+#          "
+	@printf "    ###  ##########             ##############################       ###           ###           "
+	@printf "::::::::::::::::::::::::::::::::::::::::::::::::::: $(D)by lyanga AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 
 $(NAME):	$(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
@@ -100,7 +111,7 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY: all clean fclean re bonus p_bar p_bar_bonus p_bar_close
+.PHONY: all clean fclean re bonus p_bar p_bar_bonus p_bar_close p_libft_logo
 
 # **************************************************************************** #
 # text colours
