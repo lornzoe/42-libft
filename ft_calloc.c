@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:12:33 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/06 14:27:57 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/06 14:38:11 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return NULL;
 	i = 0;
 
-	while (i < count * size)
+	while (i < nmemb * size)
 		temp[i++] = 0;
 	
 	return (temp);

@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:28:51 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/06 14:31:43 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/06 14:37:44 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	*ft_strdup(const char *s)
 	if (!dest)
 		return (NULL);
 	temp = dest;
-	while (*src)
+	while (*s)
 	{
-		*temp = *src;
+		*temp = *s;
 		temp++;
-		src++;
+		s++;
 	}
-	*temp = *src;
+	*temp = *s;
 	return (dest);	
 }
