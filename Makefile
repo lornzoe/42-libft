@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lyanga <lyanga@student.42.fr>              +#+  +:+       +#+         #
+#    By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 14:22:04 by lyanga            #+#    #+#              #
-#    Updated: 2025/05/06 12:41:18 by lyanga           ###   ########.fr        #
+#    Updated: 2025/05/06 22:20:34 by lyanga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # name
-NAME	=	libft.a
+NAME	=	$(OUTDIR)/libft.a
 # cc options
 CC		=	cc
 CFLAGS	= 	-Wall -Werror -Wextra
@@ -19,6 +19,8 @@ CFLAGS	= 	-Wall -Werror -Wextra
 RM		=	rm -f
 # archive
 AR		=	ar rcs
+# outdir, by default it's current dir
+OUTDIR ?= .
 
 # **************************************************************************** #
 # srcs

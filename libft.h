@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 03:04:41 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/06 15:32:20 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/07 00:36:16 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <limits.h>
+# include <unistd.h>
 
 // part 1 - libc functions
 int		ft_isalpha(int c);

@@ -6,84 +6,84 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:36:51 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/06 15:55:05 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/06 22:44:22 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_get_offset_from_sep(char *str, char *charset)
+static size_t	ft_get_offset_from_sep(char *str, char c)
 {
-	int	offset;
-	int	i;
+	size_t	offset;
 
 	offset = 0;
-	i = 0;
 	while (*str)
 	{
-		i = 0;
-		while (charset[i] != '\0')
-		{
-			if (charset[i] == *str)
-				return (offset);
-			i++;
-		}
+		if (c == *str)
+			return (offset);
 		str++;
 		offset++;
 	}
 	return (offset);
 }
 
-static int	ft_count_words(char *str, char *charset)
+static size_t	ft_count_words(char *str, char c)
 {
-	int	count;
-	int	i;
+	size_t	count;
 
 	count = 1;
 	if (!*str)
 		return (0);
 	while (*str)
 	{
-		i = 0;
-		while (charset[i] != '\0')
+		if (c == *str)
 		{
-			if (charset[i] == *str)
-			{
-				count++;
-				if (!ft_get_offset_from_sep(str - 1, charset))
-					count--;
-				break ;
-			}
-			i++;
+			count++;
+			if (!ft_get_offset_from_sep(str - 1, c))
+				count--;
+			break ;
 		}
 		str++;
 	}
 	return (count);
 }
+
+static void	*ft_cleanup(char **temp, char **words)
+{
+	while (temp != words)
+	{
+		temp--;
+		free(*temp);
+	}
+	free(words);
+	
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int		count;
-	char	**words;
-	char	**temp;
-	int		offset;
+	char		**words;
+	char		**temp;
+	size_t		offset;
 
-	count = ft_count_words(str, charset);
-	words = ft_calloc(sizeof(char *),count + 1);
+	words = ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);
+	if (!words)
+		return (NULL);
 	temp = words;
-	while (*str)
+	while (*s)
 	{
-		offset = ft_get_offset_from_sep(str, charset);
+		offset = ft_get_offset_from_sep(s, c);
 		if (offset)
 		{
 			*temp = calloc(sizeof(char), offset + 1);
-			*temp = ft_strncpy(*temp, str, offset);
-			(*temp)[offset] = 0;
-			str += offset;
-			if (!*str)
-				return (words);
+			if (!(*temp))
+				return (ft_cleanup(temp, words));
+			*temp = ft_strlcpy(*temp, s, offset);
+			s += offset;
 			temp++;
 		}
-		str++;
+		if (*s)
+			s++;
 	}
 	return (words);
 }
