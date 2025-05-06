@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 03:04:41 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/06 12:30:47 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/06 14:12:22 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 
 // 1b - libc functions that require malloc()
-void	*ft_calloc(size_t n, size_t size);
+void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 
 // part 2 - additional functions
