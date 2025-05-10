@@ -6,7 +6,7 @@
 #    By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 14:22:04 by lyanga            #+#    #+#              #
-#    Updated: 2025/05/10 19:43:19 by lyanga           ###   ########.fr        #
+#    Updated: 2025/05/10 20:33:42 by lyanga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@
 NAME	=	$(OUTDIR)/libft.a
 # cc options
 CC		=	cc
-CFLAGS	= -g -O0 -Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra
+DEBUG	=	-g -O0 
 # remove
 RM		=	rm -f
 # archive
@@ -57,19 +58,8 @@ BOBJS		= 	$(addprefix $(BOBJSPATH), $(BOBJSNAME))
 # **************************************************************************** #
 # rules
 
-all:	p_bar $(NAME) p_bar_close p_libft_logo
+all: $(NAME) p_libft_logo
 	@printf "\n$(B)$(MAG)$(NAME) is finished compiling$(D)\n"
-
-p_bar:
-	tput reset
-#	$(call progress_bar)
-
-p_bar_bonus:
-	tput reset
-#	$(call progress_bar_bonus)
-
-p_bar_close:
-	@printf "\n\n"
 
 p_libft_logo:
 	@printf "$(YEL)\n"
@@ -80,7 +70,7 @@ p_libft_logo:
 	@printf "+#+#+#+#+#+  +#+                  +#+           +#+    +#+    +#+      +#+           +#+         \n"
 	@printf "     #+#   #+#                   #+#           #+#    #+#    #+#      #+#           #+#          \n"
 	@printf "    ###  ##########             ##############################       ###           ###           \n"
-	@printf "::::::::::::::::::::::::::::::::::::::::::::::::::: $(D)by lyanga AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+	@printf "::::::::::::::::::::::::::::::::::::::::::::::::::: $(D)by lyanga AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\n"
 
 $(NAME):	$(OBJS)
 	@$(AR) $(NAME) $(OBJS)
@@ -88,17 +78,17 @@ $(NAME):	$(OBJS)
 $(OBJSPATH)%.o: $(SRCSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-	@printf "$(GRE)█"
+	@printf "$(GRE)█$(D)"
 
 $(BOBJSPATH)%.o: $(BONUSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-	@printf "$(YEL)█"
+	@printf "$(YEL)█$(D)"
 
 b: $(OBJS) $(BOBJS)
 	@$(AR) $(NAME) $(OBJS) $(BOBJS)
 
-bonus: p_bar_bonus b p_bar_close p_libft_logo
+bonus: b p_libft_logo
 
 clean:
 	@$(RM) $(OBJS) $(BOBJS)
