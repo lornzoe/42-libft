@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:44:58 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:46:46 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:18:39 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char   *ptr;
+	unsigned char	*ptr;
 
 	ptr = (unsigned char *) s;
 	while (n-- > 0)

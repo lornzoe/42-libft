@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:16:08 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:47:39 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 18:49:40 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,11 @@ char	*ft_strrchr(const char *s, int c)
 	last = NULL;
 	while (*ptr)
 	{
-		if (*ptr == c)
+		if (*ptr == (char)c)
 			last = ptr;
 		ptr++;
 	}
-	return last;
+	if (*ptr == (char)c)
+		last = ptr;
+	return (last);
 }

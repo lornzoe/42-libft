@@ -6,13 +6,13 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 10:27:16 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/10 10:29:50 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:28:51 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
 	t_list	*itr;
 

@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 22:47:04 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:13:33 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:23:19 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,13 @@ static char	*ft_strrev(char *str, size_t len)
 		temp = str[start];
 		str[start] = str[end];
 		str[end] = temp;
-
 		start++;
 		end--;
 	}
 	return (str);
 }
 
-static int ft_count_digits(int n)
+static int	ft_count_digits(int n)
 {
 	int	size;
 

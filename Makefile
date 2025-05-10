@@ -6,7 +6,7 @@
 #    By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 14:22:04 by lyanga            #+#    #+#              #
-#    Updated: 2025/05/10 12:21:37 by lyanga           ###   ########.fr        #
+#    Updated: 2025/05/10 19:43:19 by lyanga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME	=	$(OUTDIR)/libft.a
 # cc options
 CC		=	cc
-CFLAGS	= 	-Wall -Werror -Wextra
+CFLAGS	= -g -O0 -Wall -Werror -Wextra
 # remove
 RM		=	rm -f
 # archive
@@ -53,26 +53,6 @@ OBJS		=	$(addprefix $(OBJSPATH), $(OBJSNAME))
 BSRCSNAME 	=	$(subst $(BONUSPATH), , $(BONUSSRCS))
 BOBJSNAME	= 	$(BSRCSNAME:.c=.o)
 BOBJS		= 	$(addprefix $(BOBJSPATH), $(BOBJSNAME))
-# **************************************************************************** #
-# custom stuff
-
-define	progress_bar
-	@i=0
-	@while [[ $$i -le $(words $(SRCS)) ]] ; do \
-		printf " " ; \
-		((i = i + 1)) ; \
-	done
-	@printf "$(B)]\r[$(GRE)"
-endef
-
-define	progress_bar_bonus
-	@i=0
-	@while [[ $$i -le ($(words $(SRCS)) + $(words $(BONUSSRCS))) ]] ; do \
-		printf " " ; \
-		((i = i + 1)) ; \
-	done
-	@printf "$(B)]\r[$(GRE)"
-endef
 
 # **************************************************************************** #
 # rules
@@ -118,7 +98,7 @@ $(BOBJSPATH)%.o: $(BONUSPATH)%.c
 b: $(OBJS) $(BOBJS)
 	@$(AR) $(NAME) $(OBJS) $(BOBJS)
 
-bonus: p_bar_bonus $(OBJS) $(BOBJS) p_bar_close p_libft_logo
+bonus: p_bar_bonus b p_bar_close p_libft_logo
 
 clean:
 	@$(RM) $(OBJS) $(BOBJS)

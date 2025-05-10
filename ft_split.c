@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:36:51 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/10 12:25:39 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:39:31 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,22 @@ static size_t	ft_get_offset_from_sep(char *str, char c)
 static size_t	ft_count_words(char *str, char c)
 {
 	size_t	count;
+	int		isword;
 
-	count = 1;
+	count = 0;
+	isword = 0;
 	if (!*str)
 		return (0);
 	while (*str)
 	{
 		if (c == *str)
 		{
+			isword = 0;
+		}
+		else if (!isword)
+		{
+			isword = 1;
 			count++;
-			if (!ft_get_offset_from_sep(str - 1, c))
-				count--;
-			break ;
 		}
 		str++;
 	}
@@ -56,7 +60,6 @@ static void	*ft_cleanup(char **temp, char **words)
 		free(*temp);
 	}
 	free(words);
-	
 	return (NULL);
 }
 
@@ -75,10 +78,10 @@ char	**ft_split(char const *s, char c)
 		offset = ft_get_offset_from_sep((char *)s, c);
 		if (offset)
 		{
-			*temp = calloc(sizeof(char), offset + 1);
+			*temp = ft_calloc(sizeof(char), offset + 1);
 			if (!(*temp))
 				return (ft_cleanup(temp, words));
-			ft_strlcpy(*temp, s, offset);
+			ft_strlcpy(*temp, s, offset + 1);
 			s += offset;
 			temp++;
 		}

@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 11:50:05 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:47:03 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:37:10 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = dest;
 	s = (unsigned char *)src;
-
 	while (n-- > 0)
-	{
 		*d++ = *s++;
-	}
 	return (dest);
 }

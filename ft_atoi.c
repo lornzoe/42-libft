@@ -6,13 +6,13 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:50:28 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:46:44 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:18:09 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_isspace(int c)
+static int	ft_isspace(int c)
 {
 	if (c == ' ')
 		return (1);
@@ -50,6 +50,7 @@ int	ft_atoi(const char *nptr)
 	{
 		result *= 10;
 		result += (*s - '0');
+		s++;
 	}
 	return (result *= sign);
 }

@@ -6,13 +6,13 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 00:36:35 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:38:10 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:38:01 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }

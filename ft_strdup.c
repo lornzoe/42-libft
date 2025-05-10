@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 14:28:51 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:47:26 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:40:33 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ char	*ft_strdup(const char *s)
 		s++;
 	}
 	*temp = *s;
-	return (dest);	
+	return (dest);
 }

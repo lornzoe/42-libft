@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:44:56 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:47:37 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:40:47 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	char	*l;
-	char	*start;
+	char	*itr;
+	size_t	littlelength;
 
-	l = (char *)little;
-	while (len-- > 0)
+	if (!little || ft_strlen((char *)little) == 0)
+		return ((char *)big);
+	if (!big || ft_strlen((char *)big) == 0)
+		return (NULL);
+	itr = (char *)big;
+	littlelength = ft_strlen((char *)little);
+	while (len >= littlelength)
 	{
-		if (*big == *l)
-		{
-			if (*l == *little)
-				start = (char *)big;
-			l++;
-			if (*l == 0)
-				return (start);
-		}
-		else
-			start = 0;
-		big++;
+		if (!ft_strncmp(itr, (char *)little, littlelength))
+			return (itr);
+		itr++;
+		len--;
 	}
-	return (start);
+	return (NULL);
 }

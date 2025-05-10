@@ -6,15 +6,15 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/10 10:29:59 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/10 10:37:33 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:28:20 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
- 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *temp;
+	t_list	*temp;
 
 	while (*lst)
 	{

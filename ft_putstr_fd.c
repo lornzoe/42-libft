@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 00:38:43 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:40:21 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:38:40 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t len;
+	size_t	len;
 
 	len = ft_strlen(s);
 	write(fd, s, len);
