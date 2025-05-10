@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 03:04:41 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/10 19:42:09 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 20:03:43 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <limits.h>
 # include <unistd.h>
 
 // part 1 - libc functions
