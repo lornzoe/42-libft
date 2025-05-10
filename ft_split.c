@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:36:51 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/06 22:44:22 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 12:25:39 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,19 +66,19 @@ char	**ft_split(char const *s, char c)
 	char		**temp;
 	size_t		offset;
 
-	words = ft_calloc(sizeof(char *), ft_count_words(s, c) + 1);
+	words = ft_calloc(sizeof(char *), ft_count_words((char *)s, c) + 1);
 	if (!words)
 		return (NULL);
 	temp = words;
 	while (*s)
 	{
-		offset = ft_get_offset_from_sep(s, c);
+		offset = ft_get_offset_from_sep((char *)s, c);
 		if (offset)
 		{
 			*temp = calloc(sizeof(char), offset + 1);
 			if (!(*temp))
 				return (ft_cleanup(temp, words));
-			*temp = ft_strlcpy(*temp, s, offset);
+			ft_strlcpy(*temp, s, offset);
 			s += offset;
 			temp++;
 		}

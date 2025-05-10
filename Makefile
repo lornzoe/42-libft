@@ -6,7 +6,7 @@
 #    By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 14:22:04 by lyanga            #+#    #+#              #
-#    Updated: 2025/05/06 22:20:34 by lyanga           ###   ########.fr        #
+#    Updated: 2025/05/10 12:21:37 by lyanga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OUTDIR ?= .
 
 SRCSPATH	=	./
 OBJSPATH	=	./
-BONUSPATH	=	./bonus
+BONUSPATH	=	./
 BOBJSPATH	=	./
 INC			=	./
 
@@ -37,16 +37,22 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 				ft_strlcpy.c ft_strlcat.c \
 				ft_toupper.c ft_tolower.c \
 				ft_strchr.c ft_strrchr.c ft_strncmp.c \
-				ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c
-				
+				ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c \
+				ft_calloc.c ft_strdup.c \
+				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
+				ft_strmapi.c ft_striteri.c \
+				ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+
+BONUSSRCS		=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+
 SRCSNAME	=	$(subst $(SRCSPATH), , $(SRCS))
 
 OBJSNAME	=	$(SRCSNAME:.c=.o)
 OBJS		=	$(addprefix $(OBJSPATH), $(OBJSNAME))
 
-BONUS		=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
-BONUSNAME 	=	$(subst $(BOBJSPATH), , $(BONUS))
-
+BSRCSNAME 	=	$(subst $(BONUSPATH), , $(BONUSSRCS))
+BOBJSNAME	= 	$(BSRCSNAME:.c=.o)
+BOBJS		= 	$(addprefix $(BOBJSPATH), $(BOBJSNAME))
 # **************************************************************************** #
 # custom stuff
 
@@ -61,7 +67,7 @@ endef
 
 define	progress_bar_bonus
 	@i=0
-	@while [[ $$i -le ($(words $(SRCS)) + $(words $(BONUS))) ]] ; do \
+	@while [[ $$i -le ($(words $(SRCS)) + $(words $(BONUSSRCS))) ]] ; do \
 		printf " " ; \
 		((i = i + 1)) ; \
 	done
@@ -76,11 +82,11 @@ all:	p_bar $(NAME) p_bar_close p_libft_logo
 
 p_bar:
 	tput reset
-	$(call progress_bar)
+#	$(call progress_bar)
 
 p_bar_bonus:
 	tput reset
-	$(call progress_bar_bonus)
+#	$(call progress_bar_bonus)
 
 p_bar_close:
 	@printf "\n\n"
@@ -102,15 +108,20 @@ $(NAME):	$(OBJS)
 $(OBJSPATH)%.o: $(SRCSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
-	@printf "█"
+	@printf "$(GRE)█"
 
 $(BOBJSPATH)%.o: $(BONUSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
 	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 	@printf "$(YEL)█"
 
+b: $(OBJS) $(BOBJS)
+	@$(AR) $(NAME) $(OBJS) $(BOBJS)
+
+bonus: p_bar_bonus $(OBJS) $(BOBJS) p_bar_close p_libft_logo
+
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(BOBJS)
 	@echo "$(B)Cleaned$(D)"
 
 
@@ -120,7 +131,7 @@ fclean:	clean
 
 re:	fclean all
 
-.PHONY: all clean fclean re bonus p_bar p_bar_bonus p_bar_close p_libft_logo
+.PHONY: all clean fclean re bonus p_bar p_bar_bonus p_bar_close p_libft_logo b bonus
 
 # **************************************************************************** #
 # text colours

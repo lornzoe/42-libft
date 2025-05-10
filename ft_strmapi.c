@@ -6,11 +6,11 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 00:14:29 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:27:15 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 12:28:36 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h";
+#include "libft.h"
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
