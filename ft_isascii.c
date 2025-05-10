@@ -6,11 +6,9 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:56:51 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/10 19:16:41 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:46:31 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isascii(int c)
 {

@@ -6,11 +6,9 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 20:16:26 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/05 20:18:32 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:46:44 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

@@ -6,11 +6,9 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 12:47:04 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:47:45 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:50:19 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_toupper(int c)
 {

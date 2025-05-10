@@ -6,11 +6,9 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 19:20:10 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/05 19:50:53 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:51:30 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isdigit(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:15:38 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/10 19:17:51 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/10 19:49:59 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (ft_isinset(*itr++, set))
 			len--;
 	}
-	result = malloc (sizeof(char) * (len + 1));
+	result = malloc(sizeof(char) * (len + 1));
 	if (!result)
 		return (NULL);
 	itr = (char *)s1;
