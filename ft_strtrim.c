@@ -6,50 +6,48 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 15:15:38 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/10 19:49:59 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/16 16:18:03 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isinset(char const c, char const *set)
+static int	ft_isinset(const char *set, char c)
 {
-	char	*s;
+	size_t	i;
 
-	s = (char *)set;
-	while (*s)
+	i = 0;
+	while (set[i])
 	{
-		if (c == *s++)
-			return (c);
+		if (set[i] == c)
+			return (1);
+		i++;
 	}
 	return (0);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*itr;
-	char	*itr2;
-	char	*result;
-	size_t	len;
+	size_t	i;
+	size_t	j;
+	char	*newstr;
+	size_t	x;
 
-	itr = (char *)s1;
-	len = ft_strlen(s1);
-	while (*itr)
-	{
-		if (ft_isinset(*itr++, set))
-			len--;
-	}
-	result = malloc(sizeof(char) * (len + 1));
-	if (!result)
+	i = 0;
+	j = ft_strlen(s1);
+	x = 0;
+	if (!s1)
 		return (NULL);
-	itr = (char *)s1;
-	itr2 = result;
-	while (*itr)
-	{
-		if (!ft_isinset(*itr, set))
-			*itr2++ = *itr;
-		itr++;
-	}
-	*itr2 = 0;
-	return (result);
+	if (!set)
+		return (ft_strdup(s1));
+	while (s1[i] && ft_isinset(set, s1[i]))
+		i++;
+	while (j > i && ft_isinset(set, s1[j - 1]))
+		j--;
+	newstr = ft_calloc(j - i + 1, sizeof(char));
+	if (!newstr)
+		return (NULL);
+	while (i < j)
+		newstr[x++] = s1[i++];
+	return (newstr);
 }
