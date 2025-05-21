@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 13:24:33 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/07 00:47:35 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/21 17:22:41 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		itr++;
 	if (itr == n)
 		return (0);
-	return (s1[itr] - s2[itr]);
+	return ((unsigned char)s1[itr] - (unsigned char)s2[itr]);
 }
