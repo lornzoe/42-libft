@@ -6,7 +6,7 @@
 #    By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 14:22:04 by lyanga            #+#    #+#              #
-#    Updated: 2025/05/31 12:30:54 by lyanga           ###   ########.fr        #
+#    Updated: 2025/05/31 21:01:57 by lyanga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 				ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
 				ft_strmapi.c ft_striteri.c \
 				ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
-				ft_strrev.c ft_ilen.c ft_uilen_base.c ft_uitoa.c ft_uitoa_base.c ft_isspace.c \
+				ft_strrev.c ft_ilen.c ft_uilen_base.c ft_uitoa.c ft_uitoa_base.c ft_isspace.c ft_abs.c \
 
 BONUSSRCS		=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
@@ -78,12 +78,12 @@ $(NAME):	$(OBJS)
 
 $(OBJSPATH)%.o: $(SRCSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+	@$(CC) $(DEBUG) $(CFLAGS) -I$(INC) -c $< -o $@
 	@printf "$(GRE)█$(D)"
 
 $(BOBJSPATH)%.o: $(BONUSPATH)%.c
 	@mkdir -p $(dir $@) # 2> /dev/null || true
-	@$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+	@$(CC) $(DEBUG) $(CFLAGS) -I$(INC) -c $< -o $@
 	@printf "$(YEL)█$(D)"
 
 b: $(OBJS) $(BOBJS)

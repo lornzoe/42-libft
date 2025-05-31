@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 03:04:41 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/31 11:56:41 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/31 16:42:29 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 // part 1 - libc functions
 int		ft_isalpha(int c);
@@ -88,5 +89,6 @@ size_t ft_uilen_base(unsigned int num, int base);
 char *ft_uitoa(unsigned int n);
 char *ft_uitoa_base(unsigned int n, char *base);
 int	ft_isspace(int c);
+int ft_abs(int j);
 
 #endif
