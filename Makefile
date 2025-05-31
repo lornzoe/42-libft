@@ -6,7 +6,7 @@
 #    By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 14:22:04 by lyanga            #+#    #+#              #
-#    Updated: 2025/05/10 20:33:42 by lyanga           ###   ########.fr        #
+#    Updated: 2025/05/31 11:30:13 by lyanga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,9 @@ OUTDIR ?= .
 # srcs
 
 SRCSPATH	=	./
-OBJSPATH	=	./
+OBJSPATH	?=	./
 BONUSPATH	=	./
-BOBJSPATH	=	./
+BOBJSPATH	?=	./
 INC			=	./
 
 SRCS		=	ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
