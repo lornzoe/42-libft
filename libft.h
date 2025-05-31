@@ -6,7 +6,7 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 03:04:41 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/31 11:40:08 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/31 11:43:33 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 // adding extras here
 char	*ft_strrev(char *str, size_t len);
+size_t	ft_ilen(int num);
 
 #endif
