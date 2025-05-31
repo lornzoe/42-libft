@@ -6,30 +6,11 @@
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/06 22:47:04 by lyanga            #+#    #+#             */
-/*   Updated: 2025/05/10 19:23:19 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/05/31 11:40:36 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_strrev(char *str, size_t len)
-{
-	size_t	start;
-	size_t	end;
-	char	temp;
-
-	start = 0;
-	end = len - 1;
-	while (start < end)
-	{
-		temp = str[start];
-		str[start] = str[end];
-		str[end] = temp;
-		start++;
-		end--;
-	}
-	return (str);
-}
 
 static int	ft_count_digits(int n)
 {

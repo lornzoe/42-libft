@@ -6,7 +6,7 @@
 #    By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/03/29 14:22:04 by lyanga            #+#    #+#              #
-#    Updated: 2025/05/31 11:30:13 by lyanga           ###   ########.fr        #
+#    Updated: 2025/05/31 11:34:00 by lyanga           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,6 +98,9 @@ clean:
 fclean:	clean
 	@$(RM) $(NAME)
 	@echo "$(B)FCleaned$(D)"
+
+extern: $(OBJS) $(BOBJS)
+
 
 re:	fclean all
 
