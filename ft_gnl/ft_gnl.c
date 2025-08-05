@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
+/*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/04 20:57:02 by lyanga            #+#    #+#             */
-/*   Updated: 2025/07/08 13:25:09 by lyanga           ###   ########.fr       */
+/*   Updated: 2025/08/05 23:13:55 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line_bonus.h"
+#include "ft_gnl.h"
 
 static char	*check_buffer(char *buffer)
 {
@@ -83,7 +83,7 @@ static int	read_constrain_buffer(int fd, char **buffer, int *rval)
 	return (readval);
 }
 
-char	*get_next_line(int fd)
+char	*ft_gnl(int fd)
 {
 	static char	*buffer[FD_LIMIT];
 	char		*line;

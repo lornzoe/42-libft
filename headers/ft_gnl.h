@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_getargstr_c_bonus.c                      :+:      :+:    :+:   */
+/*   ft_gnl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lyanga <lyanga@student.42singapore.sg>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/02 23:54:16 by lyanga            #+#    #+#             */
-/*   Updated: 2025/06/03 18:00:42 by lyanga           ###   ########.fr       */
+/*   Created: 2025/06/04 21:02:09 by lyanga            #+#    #+#             */
+/*   Updated: 2025/08/05 23:14:01 by lyanga           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf_bonus.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-char	*ft_printf_getargstr_c(va_list args)
-{
-	char	*str;
+// libft.h for utils, and also for malloc() and free()
+#include "libft.h"
 
-	str = ft_calloc(1, 2);
-	if (!str)
-		return (NULL);
-	*str = (char)va_arg(args, int);
-	return (str);
-}
+// default BUFFER_SIZE val if it's not defined at compile
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
+# ifndef FD_LIMIT
+#  define FD_LIMIT 1024
+# endif
+
+char	*ft_gnl(int fd);
+
+#endif
